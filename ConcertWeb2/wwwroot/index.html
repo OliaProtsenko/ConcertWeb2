@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title> Concerts</title>
+    <link rel="stylesheet" href="css/site.css" />
+</head>
+<body>
+    <h1>Artists</h1>
+    <h3>Add Artist</h3>
+    <form action="javascript:void(0);" method="POST" onsubmit="addArtist()">
+        <input type="text" id="add-name" placeholder="New Artist">
+        <input type="text" id="add-email" placeholder="New Email ">
+        <input type="submit" value="Add">
+    </form>
+
+    <div id="editArtist">
+        <h3>Edit</h3>
+        <form action="javascript:void(0);" onsubmit="updateArtist()">
+            <input type="hidden" id="edit-id">
+            <input type="text" id="edit-name">
+            <input type="text" id="edit-email">
+            <input type="submit" value="Save">
+            <a onclick="closeInput()" aria-label="Close">&#10006;</a>
+        </form>
+    </div>
+
+    <p id="counter"></p>
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+        <tbody id="artists"></tbody>
+    </table>
+
+    <script src="js/lab2.js" asp-append-version="true"></script>
+    <script type="text/javascript">
+        getArtists();
+    </script>
+</body>
