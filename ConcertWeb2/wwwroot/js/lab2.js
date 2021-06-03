@@ -43,9 +43,9 @@ function deleteArtist(id) {
 }
 
 function displayEditForm(id) {
-    const artist = artists.find(artist => artists.id === id);
+    const artist = artists.find(artist => artist.id === id);
 
-   
+    document.getElementById('edit-id').value = artist.id;
     document.getElementById('edit-name').value = artist.name;
     document.getElementById('edit-email').value = artist.email;
     document.getElementById('editForm').style.display = 'block';
